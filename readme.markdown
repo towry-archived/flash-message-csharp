@@ -25,7 +25,7 @@ if (FlashMessage.Has(this)) {
 ```
 
 Use `FlashMessage.Has` method to test if there has a message, remeber always pass
-this (System.Web.UI.Page instance) to the message.
+this (System.Web.UI.Page instance) to the method.
 
 ---
 
