@@ -51,10 +51,12 @@ public static class FlashMessage
 
     public static void Flash(this System.Web.UI.Page page)
     {
-        if (page.Response.Cookies["flash_message"] != null)
+        if (page.Request.Cookies["flash_message"] != null)
         {
-            page.Response.Write(page.Response.Cookies["flash_message"].Value);
-            page.Response.Cookies.Remove("flash_message");
+            page.Response.Write(page.Request.Cookies["flash_message"].Value);
+            HttpCookie ck = new HttpCookie("flash_message");
+            ck.Expires = DateTime.Now.AddDays(-1d);
+            page.Response.Cookies.Add(ck);
         }
     }
 
