@@ -39,7 +39,7 @@ public static class FlashMessage
 {
     public static bool Has(this System.Web.UI.Page page)
     {
-        if (page.Response.Cookies["flash_message"] != null)
+        if (page.Request.Cookies["flash_message"] != null)
         {
             return true;
         }
